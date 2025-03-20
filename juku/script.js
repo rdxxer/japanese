@@ -49,14 +49,15 @@ function renderPage() {
         input.addEventListener('blur', e => {
             const conv = romajiConv(input.value).toHiragana().trim()
             input.value = conv
-            if (conv.length !== 0) userAnswers[kanji] = conv
+            if (conv.length == 0) delete userAnswers[kanji]
+            else userAnswers[kanji] = conv
         })
         input.addEventListener('focus', () => {
             aDiv.previousElementSibling.classList.add('focused')
-        });
+        })
         input.addEventListener('blur', () => {
             aDiv.previousElementSibling.classList.remove('focused')
-        });
+        })
         if (kanji in prevAnswers) {
             if (prevAnswers[kanji] == quizData[i].reading) {
                 input.className = 'ac'
