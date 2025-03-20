@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.container {
+    width: 800px;
+    margin: 30px auto;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-auto-rows: minmax(10px, auto);
+    padding: 10px;
+}
+
+.kanji {
+    box-sizing: content-box;
+}
+.kanji.focused {
+    border-left: 2px solid #f00;
+}
+
+.reading input {
+    width: 100%;
+    padding: 3px;
+    border: none;
+    background: #222;
+    color: white;
+    outline: none;
+}
+
+.reading input.ac {
+    background: #030;
+    pointer-events: none;
+}
+
+.reading input.wa {
+    background: #300;
+}
+
+.pagination {
+    margin-top: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.pagination button {
+    padding: 8px 12px;
+    background-color: #555;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
